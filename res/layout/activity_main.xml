@@ -1,0 +1,96 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity" >
+
+<RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+	android:checkedButton="@+id/proxcloudRadio"
+    android:orientation="vertical">
+    <RadioButton android:id="@+id/proxcloudRadio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Flash latest Proxcloud firmware"
+        android:onClick="onRadioButtonClicked"
+	android:buttonTint="@color/proxcloud" />
+    <RadioButton android:id="@+id/proxmark3Radio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Flash proxmark3 github firmware"
+        android:onClick="onRadioButtonClicked"
+	android:buttonTint="@color/proxcloud"/>
+
+    <RadioButton android:id="@+id/customRadio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Flash custom firmware file"
+        android:onClick="onRadioButtonClicked" 
+	android:buttonTint="@color/proxcloud"/>
+
+
+</RadioGroup> 
+
+<Button
+     android:id="@+id/chooseButton"
+     android:layout_height="wrap_content"
+     android:layout_width="wrap_content"
+     android:clickable="false"
+     android:text="Select firmware file to load" />
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal" >
+<Button
+     android:id="@+id/connectButton"
+     android:layout_height="wrap_content"
+     android:layout_width="wrap_content"
+     android:clickable="false"
+     android:text="Connect" />
+
+<Button
+     android:id="@+id/startFlash"
+     android:layout_height="wrap_content"
+     android:layout_width="wrap_content"
+     android:text="Start Flash" />
+
+<CheckBox android:id="@+id/bootloaderCheckbox"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:text="Also Flash Bootloader (dangerous)"
+        android:onClick="onCheckboxClicked"/>
+
+</LinearLayout>
+    <TextView
+        android:id="@+id/textstatus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold" />
+
+ <ProgressBar
+      android:id="@+id/progressBar"
+      style="@android:style/Widget.ProgressBar.Horizontal"
+      android:layout_width="fill_parent"
+	android:max="320"
+      android:layout_height="wrap_content"
+      android:progress="0"/>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal" 
+	android:gravity="center">
+
+
+<Button
+     android:id="@+id/webButton"
+     android:layout_height="wrap_content"
+     android:layout_width="wrap_content"
+     android:clickable="false"
+     android:text="Open Proxcloud site" />
+
+</LinearLayout>
+</LinearLayout>
